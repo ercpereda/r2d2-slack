@@ -3,7 +3,10 @@
   "version": "0.0.0",
   "private": true,
   "author": "E. R. C. Pereda <ercp42@gmail.com>",
-  "description": "A simple helpful robot for your Company",
+  "description": "Hobot for slack",
+  "scripts": {
+    "start": "PORT=$OPENSHIFT_NODEJS_PORT BIND_ADDRESS=$OPENSHIFT_NODEJS_IP HEROKU_URL=$OPENSHIFT_APP_DNS REDIS_URL=redis://:$REDIS_PASSWORD@$OPENSHIFT_REDIS_HOST:$OPENSHIFT_REDIS_PORT HUBOT_SLACK_TOKEN=$HUBOT_SLACK_TOKEN bin/hubot -n r2d2hubot -a slack"
+  },
   "dependencies": {
     "hubot": "^2.19.0",
     "hubot-diagnostics": "0.0.1",
